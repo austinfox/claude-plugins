@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "tax-advisor",
-      "source": "./",
+      "source": "./plugins/tax-advisor",
       "description": "Proactive tax advisor with auto-triggered skill, /tax command, and specialized subagents for structured tax analysis",
       "version": "1.0.0",
       "category": "productivity",

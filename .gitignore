@@ -1,14 +1,12 @@
 # Tax knowledge base — generated per user by bootstrap script
-tax-knowledge/
+**/tax-knowledge/
 
 # Dependencies
-node_modules/
-scripts/node_modules/
+**/node_modules/
 
 # Bun
 bun.lockb
 bun.lock
-scripts/bun.lock
 
 # OS files
 .DS_Store
