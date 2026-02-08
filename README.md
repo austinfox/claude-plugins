@@ -16,25 +16,25 @@ A proactive US tax advisor plugin for Claude Code — specializing in Washington
 
 ## Installation
 
-### From GitHub (for friends)
+### From GitHub
 
 ```bash
 # Add the marketplace
-/plugin marketplace add yourusername/claude-tax-advisor
+/plugin marketplace add austinfox/claude-tax-advisor
 
 # Install the plugin
-/plugin install tax-advisor
+/plugin install tax-advisor@claude-tax-advisor
 ```
 
 ### Local install (for development)
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/claude-tax-advisor.git
+git clone https://github.com/austinfox/claude-tax-advisor.git
 
 # Install locally
 /plugin marketplace add ./claude-tax-advisor
-/plugin install tax-advisor
+/plugin install tax-advisor@claude-tax-advisor
 ```
 
 ## Setup
