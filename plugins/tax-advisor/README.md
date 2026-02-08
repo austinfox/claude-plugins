@@ -5,7 +5,7 @@ A proactive US tax advisor plugin for Claude Code — specializing in Washington
 ## Features
 
 - **Auto-triggered skill** — activates on any tax-related conversation
-- **`/tax` command** — explicit invocation for specific questions
+- **`/tax-advisor` command** — explicit invocation for specific questions
 - **4 specialized subagents** for deep analysis:
   - **Tax Situation Analyzer** — structured interview + optimization report
   - **Tax Document Reviewer** — reads W-2s/1099s, finds missed opportunities
@@ -49,12 +49,12 @@ Start any conversation about taxes — the skill auto-activates and checks for t
 ### Explicit invocation
 
 ```
-/tax strategies for capital gains
-/tax review my W-2
-/tax estimate Q1 payment
-/tax compare standard vs itemized
-/tax self-employment deductions
-/tax WA capital gains planning
+/tax-advisor strategies for capital gains
+/tax-advisor review my W-2
+/tax-advisor estimate Q1 payment
+/tax-advisor compare standard vs itemized
+/tax-advisor self-employment deductions
+/tax-advisor WA capital gains planning
 ```
 
 ### Agent workflows

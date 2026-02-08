@@ -12,7 +12,7 @@ plugins/
   tax-advisor/                     Tax advisor plugin
     .claude-plugin/plugin.json       Plugin manifest
     skills/tax-advisor/              Auto-triggered skill (SKILL.md) + 7 reference docs
-    commands/tax.md                  /tax slash command with routing logic
+    commands/tax-advisor.md            /tax-advisor slash command with routing logic
     agents/                          4 specialized subagents
     scripts/                         Bootstrap script for IRS/WA DOR publications
     tax-knowledge/                   Generated knowledge base (gitignored, per-user)
@@ -41,7 +41,7 @@ Use `--force` to re-download. Auto-refreshes every 30 days.
 claude --plugin-dir plugins/tax-advisor
 ```
 
-Then try `/tax` or mention taxes in conversation.
+Then try `/tax-advisor` or mention taxes in conversation.
 
 ### Conventions
 
