@@ -7,6 +7,8 @@ scripts/node_modules/
 
 # Bun
 bun.lockb
+bun.lock
+scripts/bun.lock
 
 # OS files
 .DS_Store

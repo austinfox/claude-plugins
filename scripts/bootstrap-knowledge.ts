@@ -213,15 +213,16 @@ const WA_SOURCES: DownloadSource[] = [
   {
     filename: "bo-tax-rates.txt",
     urls: [
-      "https://dor.wa.gov/taxes-rates/business-occupation-tax/business-occupation-tax-rates",
+      "https://dor.wa.gov/find-taxes-rates/business-occupation-tax/business-occupation-tax-classifications",
+      "https://dor.wa.gov/taxes-rates/business-occupation-tax/business-occupation-tax-classifications",
     ],
     description: "WA B&O Tax Rates",
   },
   {
     filename: "pfml-rates-and-rules.txt",
     urls: [
-      "https://paidleave.wa.gov/employers/premiums/",
-      "https://paidleave.wa.gov/help-center/premiums/",
+      "https://paidleave.wa.gov/employer-roles-responsibilities/",
+      "https://paidleave.wa.gov/app/uploads/2024/10/2025-Premium-Rates-Employer-Mailer.pdf",
     ],
     description: "WA PFML Rates and Rules",
   },
