@@ -18,12 +18,12 @@
     "retirement",
     "hsa"
   ],
-  "skills": ["skills/tax-advisor"],
-  "commands": ["commands/tax.md"],
+  "skills": ["./skills/tax-advisor"],
+  "commands": ["./commands/tax.md"],
   "agents": [
-    "agents/tax-situation-analyzer.md",
-    "agents/tax-document-reviewer.md",
-    "agents/tax-strategy-explorer.md",
-    "agents/tax-quarterly-estimator.md"
+    "./agents/tax-situation-analyzer.md",
+    "./agents/tax-document-reviewer.md",
+    "./agents/tax-strategy-explorer.md",
+    "./agents/tax-quarterly-estimator.md"
   ]
 }
