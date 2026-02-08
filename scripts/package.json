@@ -1,0 +1,16 @@
+{
+  "name": "tax-advisor-bootstrap",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bootstrap": "bun run bootstrap-knowledge.ts",
+    "bootstrap:force": "bun run bootstrap-knowledge.ts --force"
+  },
+  "dependencies": {
+    "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.0"
+  }
+}

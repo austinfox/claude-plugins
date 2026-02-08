@@ -1,0 +1,24 @@
+{
+  "marketplace": {
+    "name": "claude-tax-advisor",
+    "description": "Proactive US tax advisor plugin for Claude Code — aggressive but legal tax strategies with WA State specialization",
+    "category": "productivity",
+    "keywords": [
+      "tax",
+      "irs",
+      "tax-planning",
+      "washington-state",
+      "estimated-taxes",
+      "capital-gains",
+      "retirement",
+      "self-employment"
+    ]
+  },
+  "plugins": [
+    {
+      "name": "tax-advisor",
+      "source": "./",
+      "description": "Proactive tax advisor with auto-triggered skill, /tax command, and specialized subagents for structured tax analysis"
+    }
+  ]
+}

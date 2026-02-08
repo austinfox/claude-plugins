@@ -1,0 +1,27 @@
+{
+  "name": "tax-advisor",
+  "version": "1.0.0",
+  "description": "Proactive US tax advisor specializing in Washington State — aggressive but legal strategies grounded in current IRS publications and WA DOR guidance",
+  "author": "austin",
+  "license": "MIT",
+  "keywords": [
+    "tax",
+    "irs",
+    "washington-state",
+    "tax-planning",
+    "tax-strategy",
+    "estimated-taxes",
+    "capital-gains",
+    "self-employment",
+    "retirement",
+    "hsa"
+  ],
+  "skills": ["skills/tax-advisor"],
+  "commands": ["commands/tax.md"],
+  "agents": [
+    "agents/tax-situation-analyzer.md",
+    "agents/tax-document-reviewer.md",
+    "agents/tax-strategy-explorer.md",
+    "agents/tax-quarterly-estimator.md"
+  ]
+}

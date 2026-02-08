@@ -1,0 +1,20 @@
+# Tax knowledge base — generated per user by bootstrap script
+tax-knowledge/
+
+# Dependencies
+node_modules/
+scripts/node_modules/
+
+# Bun
+bun.lockb
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
