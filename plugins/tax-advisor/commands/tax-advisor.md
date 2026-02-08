@@ -25,7 +25,7 @@ Before doing anything else:
 
 1. Check if `${CLAUDE_PLUGIN_ROOT}/tax-knowledge/.last-updated` exists using Glob
 2. If it does NOT exist:
-   - Run the bootstrap automatically: `cd "${CLAUDE_PLUGIN_ROOT}/scripts" && npm install && npx tsx bootstrap-knowledge.ts`
+   - Run the bootstrap automatically: `cd "${CLAUDE_PLUGIN_ROOT}/scripts" && bun install && bun run bootstrap-knowledge.ts`
    - If bootstrap fails, instruct the user to run it manually
 3. If it exists, read the timestamp. If older than 90 days, suggest re-running with `--force`
 4. Proceed with the request

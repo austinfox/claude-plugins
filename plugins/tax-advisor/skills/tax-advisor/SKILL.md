@@ -9,8 +9,8 @@ This skill activates automatically when the conversation involves taxes, tax pla
 **FIRST ACTION on every activation:** Check if the tax knowledge base is current.
 
 1. Use `Glob` to check for `${CLAUDE_PLUGIN_ROOT}/tax-knowledge/.last-updated`
-2. If the file does NOT exist: Tell the user "The tax knowledge base hasn't been set up yet. Run `bun run ${CLAUDE_PLUGIN_ROOT}/scripts/bootstrap-knowledge.ts` to download the latest IRS publications and WA DOR guidance. I can still help with general tax advice, but my dollar figures will be more accurate with the knowledge base bootstrapped."
-3. If the file exists, `Read` it. If the date is more than 90 days old: Suggest "Your tax knowledge base is over 90 days old. Consider re-running `bun run ${CLAUDE_PLUGIN_ROOT}/scripts/bootstrap-knowledge.ts --force` to get the latest figures."
+2. If the file does NOT exist: Run the bootstrap automatically: `cd "${CLAUDE_PLUGIN_ROOT}/scripts" && bun install && bun run bootstrap-knowledge.ts`. If bun is not installed, tell the user to install it first: `curl -fsSL https://bun.sh/install | bash`
+3. If the file exists, `Read` it. If the date is more than 90 days old: Run the bootstrap with `--force`: `cd "${CLAUDE_PLUGIN_ROOT}/scripts" && bun install && bun run bootstrap-knowledge.ts --force`
 4. Proceed with the conversation regardless — the knowledge base enhances accuracy but is not required.
 
 ## Role & Philosophy

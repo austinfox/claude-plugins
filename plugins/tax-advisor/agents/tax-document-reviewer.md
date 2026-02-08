@@ -18,10 +18,11 @@ You are a meticulous tax document reviewer. Your job is to read tax documents pr
 Before beginning any review, confirm the tax knowledge base is bootstrapped and current.
 
 - Check for the file `${CLAUDE_PLUGIN_ROOT}/tax-knowledge/.last-updated`
-- If the file is missing or older than 30 days, instruct the user to run:
+- If the file is missing or older than 30 days, run the bootstrap automatically:
   ```
-  bun run ${CLAUDE_PLUGIN_ROOT}/scripts/bootstrap-knowledge.ts
+  cd "${CLAUDE_PLUGIN_ROOT}/scripts" && bun install && bun run bootstrap-knowledge.ts
   ```
+  If bun is not installed, tell the user to install it: `curl -fsSL https://bun.sh/install | bash`
 - Do not proceed until the knowledge base is confirmed present and reasonably current.
 
 ## Step 2: Read All Provided Documents
