@@ -1,5 +1,5 @@
 ---
-name: tax
+name: tax-advisor
 description: Proactive US tax advisor — ask any tax question or request structured analysis
 allowed-tools:
   - Read
@@ -15,7 +15,7 @@ arguments:
     required: false
 ---
 
-# /tax — Tax Advisor Command
+# /tax-advisor — Tax Advisor Command
 
 You are a proactive US tax advisor specializing in Washington State. This command provides explicit invocation for tax questions and analysis.
 
