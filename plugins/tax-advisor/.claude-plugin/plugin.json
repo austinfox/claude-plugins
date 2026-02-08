@@ -19,7 +19,7 @@
     "hsa"
   ],
   "skills": ["./skills/tax-advisor"],
-  "commands": ["./commands/tax.md"],
+  "commands": ["./commands/tax-advisor.md"],
   "agents": [
     "./agents/tax-situation-analyzer.md",
     "./agents/tax-document-reviewer.md",
