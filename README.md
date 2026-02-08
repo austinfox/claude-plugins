@@ -21,7 +21,7 @@ Proactive US tax advisor specializing in Washington State — aggressive but leg
 
 ```bash
 # Add the marketplace
-/plugin marketplace add austinfox/austinfox-claude-plugins
+/plugin marketplace add austinfox/claude-plugins
 
 # Install a plugin
 /plugin install tax-advisor@austinfox-claude-plugins

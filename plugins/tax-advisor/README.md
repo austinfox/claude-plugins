@@ -18,7 +18,7 @@ A proactive US tax advisor plugin for Claude Code — specializing in Washington
 
 ```bash
 # Add the marketplace
-/plugin marketplace add austinfox/austinfox-claude-plugins
+/plugin marketplace add austinfox/claude-plugins
 
 # Install the plugin
 /plugin install tax-advisor@austinfox-claude-plugins
