@@ -1,0 +1,21 @@
+{
+  "name": "adobe-acrobat-form",
+  "version": "1.0.0",
+  "description": "Expert on Adobe Acrobat PDF forms - creating, modifying, and filling form fields, understanding field types and properties, JavaScript actions, form validation, and integration with Adobe Acrobat Sign (e-sign)",
+  "author": {
+    "name": "Eglind Myftiu"
+  },
+  "license": "MIT",
+  "keywords": [
+    "pdf",
+    "acrobat",
+    "forms",
+    "acroform",
+    "e-sign",
+    "adobe-sign",
+    "pypdf",
+    "signature",
+    "form-fields"
+  ],
+  "skills": ["./skills/adobe-acrobat-form"]
+}

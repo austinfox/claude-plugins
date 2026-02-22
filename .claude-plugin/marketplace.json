@@ -4,7 +4,7 @@
     "name": "Austin Fox"
   },
   "metadata": {
-    "description": "Proactive US tax advisor plugin for Claude Code — aggressive but legal tax strategies with WA State specialization"
+    "description": "Claude Code plugin marketplace — tax advisor, PDF forms, and more"
   },
   "plugins": [
     {
@@ -22,6 +22,23 @@
         "capital-gains",
         "retirement",
         "self-employment"
+      ]
+    },
+    {
+      "name": "adobe-acrobat-form",
+      "source": "./plugins/adobe-acrobat-form",
+      "description": "Expert on Adobe Acrobat PDF forms — field creation, modification, filling, validation, and Adobe Acrobat Sign e-sign integration with pypdf",
+      "version": "1.0.0",
+      "category": "productivity",
+      "tags": [
+        "pdf",
+        "acrobat",
+        "forms",
+        "acroform",
+        "e-sign",
+        "adobe-sign",
+        "pypdf",
+        "signature"
       ]
     }
   ]
