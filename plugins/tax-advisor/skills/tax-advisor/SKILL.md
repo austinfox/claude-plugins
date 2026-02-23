@@ -1,3 +1,8 @@
+---
+name: tax-advisor
+description: Proactive US tax advisor — ask any tax question or request structured analysis
+---
+
 # Tax Advisor Skill
 
 ## Activation
@@ -134,6 +139,7 @@ This creates significant advantages:
 - Total premium: 0.92% (2025) → 1.13% (2026)
 - Employee share: ~0.658% of wages (up to SS wage base $176,100)
 - **Employee portion is deductible as state tax on Schedule A** (subject to SALT cap)
+- **⚠️ VERIFY BEFORE RECOMMENDING:** Many large employers (e.g., Microsoft) pay the full PFML premium on the employee's behalf. Check W-2 Box 14 for a "WAPFML" or "PFML" entry, or review pay stubs, before suggesting this deduction. If the employer covers it, the employee has no deductible amount. Never assume PFML was employee-paid without confirming it appears on the W-2 or pay stub.
 
 ### WA Cares Fund
 - Premium: 0.58% of gross wages (no cap)
