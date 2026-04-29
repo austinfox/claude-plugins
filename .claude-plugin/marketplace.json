@@ -44,8 +44,8 @@
     {
       "name": "subdomain-deploy",
       "source": "./plugins/subdomain-deploy",
-      "description": "Deploy a personal project to an austinfox.com subdomain on Vercel — one project per subdomain, Bun+Vite+React+TS stack, password-gated via custom Edge middleware",
-      "version": "1.0.0",
+      "description": "Deploy a personal project to an austinfox.com subdomain on Vercel — one project per subdomain, Bun+Vite+React+TS stack, three access patterns (public / single-password / multi-user) and optional Upstash-backed cross-device progress",
+      "version": "1.1.0",
       "category": "deployment",
       "tags": [
         "vercel",
