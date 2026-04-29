@@ -4,7 +4,7 @@
     "name": "Austin Fox"
   },
   "metadata": {
-    "description": "Claude Code plugin marketplace — tax advisor, PDF forms, and more"
+    "description": "Claude Code plugin marketplace — tax advisor, PDF forms, subdomain deploys, and more"
   },
   "plugins": [
     {
@@ -39,6 +39,26 @@
         "adobe-sign",
         "pypdf",
         "signature"
+      ]
+    },
+    {
+      "name": "subdomain-deploy",
+      "source": "./plugins/subdomain-deploy",
+      "description": "Deploy a personal project to an austinfox.com subdomain on Vercel — one project per subdomain, Bun+Vite+React+TS stack, password-gated via custom Edge middleware",
+      "version": "1.0.0",
+      "category": "deployment",
+      "tags": [
+        "vercel",
+        "deploy",
+        "subdomain",
+        "austinfox",
+        "bun",
+        "vite",
+        "react",
+        "typescript",
+        "tailwind",
+        "edge-middleware",
+        "password-protection"
       ]
     }
   ]
