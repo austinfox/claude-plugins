@@ -1,0 +1,23 @@
+{
+  "name": "subdomain-deploy",
+  "version": "1.1.0",
+  "description": "Deploy a personal project to a subdomain of austinfox.com on Vercel — one project per subdomain, Bun+Vite+React+TypeScript stack. Three access patterns (public / single-password / multi-user) and optional cloud-synced progress via Upstash Redis. Wildcard DNS is already configured on Porkbun.",
+  "author": {
+    "name": "Austin Fox"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vercel",
+    "deploy",
+    "subdomain",
+    "austinfox",
+    "bun",
+    "vite",
+    "react",
+    "typescript",
+    "tailwind",
+    "edge-middleware",
+    "password-protection"
+  ],
+  "skills": ["./skills/subdomain-deploy"]
+}

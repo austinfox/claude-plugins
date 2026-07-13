@@ -94,6 +94,8 @@ Washington's Business & Occupation (B&O) tax is a gross receipts tax — it appl
 
 **Small Employer Exemption:** Employers with fewer than 50 employees in Washington are exempt from the employer portion of the premium. Their employees still pay the employee share.
 
+**Confirm who paid:** Do not assume the employee paid the premium. Some employers pay the employee share on the worker's behalf. Confirm an employee-paid amount from W-2 Box 14 (often labeled `WAPFML` or `PFML`) or pay stubs before evaluating a deduction.
+
 **Maximum Weekly Benefit:** $1,542 per week for qualifying leave.
 
 **2026 Rate:** The premium rate is scheduled to increase to 1.13% in 2026.

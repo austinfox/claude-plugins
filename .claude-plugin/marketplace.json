@@ -4,7 +4,7 @@
     "name": "Austin Fox"
   },
   "metadata": {
-    "description": "Source-backed US tax advisor plugin for Claude Code with WA, CA, and US–Sweden cross-border coverage"
+    "description": "Claude Code plugin marketplace — tax advisor, PDF forms, subdomain deploys, and more"
   },
   "plugins": [
     {
@@ -27,6 +27,43 @@
         "capital-gains",
         "retirement",
         "self-employment"
+      ]
+    },
+    {
+      "name": "adobe-acrobat-form",
+      "source": "./plugins/adobe-acrobat-form",
+      "description": "Expert on Adobe Acrobat PDF forms — field creation, modification, filling, validation, and Adobe Acrobat Sign e-sign integration with pypdf",
+      "version": "1.0.0",
+      "category": "productivity",
+      "tags": [
+        "pdf",
+        "acrobat",
+        "forms",
+        "acroform",
+        "e-sign",
+        "adobe-sign",
+        "pypdf",
+        "signature"
+      ]
+    },
+    {
+      "name": "subdomain-deploy",
+      "source": "./plugins/subdomain-deploy",
+      "description": "Deploy a personal project to an austinfox.com subdomain on Vercel — one project per subdomain, Bun+Vite+React+TS stack, three access patterns (public / single-password / multi-user) and optional Upstash-backed cross-device progress",
+      "version": "1.1.0",
+      "category": "deployment",
+      "tags": [
+        "vercel",
+        "deploy",
+        "subdomain",
+        "austinfox",
+        "bun",
+        "vite",
+        "react",
+        "typescript",
+        "tailwind",
+        "edge-middleware",
+        "password-protection"
       ]
     }
   ]
