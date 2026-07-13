@@ -6,24 +6,22 @@ A collection of Claude Code plugins by Austin Fox.
 
 ### tax-advisor
 
-Proactive US tax advisor specializing in Washington State — aggressive but legal strategies grounded in current IRS publications and WA DOR guidance.
+Source-backed U.S. tax planning, document review, and estimated-tax guidance with detailed Washington, California, and U.S.–Sweden cross-border coverage.
 
 **Features:**
-- Auto-triggered skill — activates on any tax-related conversation
-- `/tax-advisor` command — explicit invocation for specific questions
-- 4 specialized subagents (situation analyzer, document reviewer, strategy explorer, quarterly estimator)
-- 7 reference documents loaded on demand for deep dives
-- Bootstrap script downloads latest IRS publications and WA DOR guidance
+- Auto-triggered tax skill and `/tax-advisor` command
+- 4 specialized subagents for comprehensive analysis, documents, planning, and estimates
+- On-demand federal, state, international, case-law, and privacy references
+- Foreign tax credit, FEIE, treaty, FBAR/FATCA, PFIC, and Sweden-specific screening
+- Bootstrap script for current U.S., WA, CA, and Swedish government sources
+- Opt-in, gitignored profiles that exclude sensitive identifiers
 
 **[Full documentation](plugins/tax-advisor/README.md)**
 
 ## Installation
 
 ```bash
-# Add the marketplace
 /plugin marketplace add austinfox/claude-plugins
-
-# Install a plugin
 /plugin install tax-advisor@austinfox-claude-plugins
 ```
 

@@ -82,6 +82,7 @@
 - **April 15:** Last day for **prior year IRA contributions** — $7,000 + $1,000 catch-up if age 50+. Hard deadline regardless of extensions.
 - **April 15:** Last day for **prior year HSA contributions** — $4,300/$8,550 + $1,000 catch-up if age 55+. Also a hard deadline.
 - **April 15:** **Q1 estimated tax payment** due for the current year.
+- **April 15:** **FBAR (FinCEN Form 114)** due for the prior calendar year if aggregate foreign-account values exceeded the filing threshold. Current rules provide an automatic extension to October 15; verify FinCEN relief and the tax year.
 
 ### Critical Distinction
 
@@ -110,9 +111,10 @@
 
 ## June
 
-### Key Deadline
+### Key Deadlines
 
 - **June 15:** Q2 estimated tax payment due.
+- A qualifying U.S. citizen or resident whose tax home and abode were outside the United States and Puerto Rico on the regular due date generally receives an automatic 2-month return-filing extension to June 15. Attach the required statement. This generally does **not** stop interest on unpaid tax from the regular April deadline or postpone estimated payments; verify Pub. 54 for the tax year.
 
 ### Mid-Year Tax Projection
 
@@ -165,7 +167,8 @@
 
 ### Key Deadline
 
-- **October 15:** Extended individual returns due — **HARD DEADLINE**. No further extensions are available. Failure to file triggers a 5% per month penalty (up to 25%) on the unpaid balance, in addition to late payment penalties.
+- **October 15:** Extended individual returns are generally due; verify disaster relief or a valid Form 2350 period before calling it an absolute deadline.
+- **October 15:** Automatically extended FBAR deadline under current rules. FBAR is filed separately with FinCEN, not attached to Form 1040.
 
 ### Open Enrollment Season
 
@@ -222,7 +225,7 @@ The following must be completed by **December 31** — no extensions, no excepti
 - **FSA spending:** use your remaining balance before it expires. Only the **$660 carryover** (if your plan allows it) survives into next year. Schedule those last dental cleanings and stock up on eligible medical supplies.
 - **Qualified Opportunity Zone investments:** must be made within **180 days** of the gain recognition date. If your 180th day falls in December, do not miss it.
 - **Medical expenses:** if itemizing and your unreimbursed medical expenses are near the **7.5% of AGI threshold**, consider accelerating planned medical expenses (elective procedures, dental work, eyeglasses) into December.
-- **State/local tax payments:** for SALT deduction purposes (capped at **$40,000** under post-OBBBA law for MFJ, $20,000 for single), consider prepaying state taxes or property taxes if you have remaining cap room.
+- **State/local tax payments:** for 2025, the federal SALT cap is **$40,000** for filing statuses other than MFS and **$20,000** for MFS, subject to an income-based phase-down. Prepay only assessed taxes that are deductible in that year; verify later-year indexed amounts.
 
 ### Year-End Withholding Strategy
 
@@ -271,8 +274,29 @@ The following must be completed by **December 31** — no extensions, no excepti
 - Maintain a **mileage log** (date, destination, business purpose, miles driven), **home office records** (square footage of office, total home square footage, allocated expenses), and **business expense documentation** organized by category.
 - Track **estimated tax payments** and **self-employment tax** (15.3% on first $176,100 of net SE income for Social Security, 2.9% Medicare on all SE income, plus 0.9% Additional Medicare Tax on SE income above $200K single / $250K MFJ).
 
-### Washington State Specifics
+### International and U.S.–Sweden Items
 
-- **WA Capital Gains Tax:** track long-term capital gains toward the **$278,000 threshold** (2025). Gains above this amount are taxed at 7%. Certain exemptions apply (real estate, retirement accounts, livestock).
+- Maintain a workday/travel calendar. Compensation source generally follows where services were performed, including U.S. workdays during a Swedish assignment.
+- Reconcile foreign income in original currency to U.S. dollars and document the rate source and method.
+- For foreign tax credits, track tax by country, Form 1116 category, paid/accrued method, payment or withholding date, final/refundable status, and carryover year.
+- Keep foreign final assessments and refunds. A later foreign tax change may require Form 1116 redetermination and amended-return analysis.
+- Screen aggregate foreign accounts for FBAR and specified foreign financial assets for Form 8938 independently.
+- Review every non-U.S. fund for PFIC/Form 8621 exposure and every foreign pension/entity/trust for separate reporting before filing.
+- **Sweden:** retain the `Inkomstdeklaration`, `slutskattebesked`, Skatteverket tax-account history, payroll statements, ISK/KF underlying holdings, and pension records. Do not treat preliminary tax withholding as the final FTC amount without reconciliation.
+- Compare FTC and FEIE before electing Form 2555; tax allocable to excluded income cannot also generate a credit.
+- If U.S.-source income is taxed by Sweden, review Article 23 credit sequencing and treaty re-sourcing rather than placing it in the ordinary foreign-source category.
+- Confirm U.S.–Sweden social-security coverage and obtain a certificate of coverage when required under the totalization agreement.
+
+### State-Specific Items
+
+**Washington State:**
+- **WA Capital Gains Tax:** for 2025, track gains against the $278,000 standard deduction and apply the 7% / 9.9% brackets plus current exemptions and deductions. Retrieve indexed values for later years from WA DOR.
 - **B&O Tax:** if self-employed or operating a business in Washington, monitor gross receipts for B&O tax obligations. The small business credit phases out above certain thresholds.
-- **PFML and WA Cares:** save pay stubs documenting premiums paid for the Paid Family and Medical Leave program and WA Cares Fund — these may be deductible as state taxes for SALT purposes.
+- **PFML and WA Cares:** save Box 14/pay-stub records and classify each levy separately. Do not automatically combine them as SALT; apply current federal guidance and the treatment documented in the Washington reference.
+
+**California:**
+- **CA Estimated Tax Payments:** use the tax-year Form 540-ES rules. California generally uses a 30% / 40% / 0% / 30% installment pattern and restricts prior-year safe harbor for high-income taxpayers; it is not the federal equal-installment schedule.
+- **LLC / Corporation Tax:** California LLCs generally owe an $800 annual tax and may owe an income-based LLC fee; corporation minimum-tax and first-year rules differ. Verify entity type, tax year, due date, and exceptions with FTB.
+- **SDI Tracking:** save pay stubs and verify the tax-year rate (1.2% for 2025; 1.3% for 2026) and federal treatment before claiming a deduction.
+- **Renter's Credit:** if renting, check eligibility for the $60/$120 CA Renter's Credit (CA AGI limits apply).
+- **Conformity Check:** verify CA treatment of any new federal tax provisions (OBBBA deductions). CA typically conforms with a 1-2 year lag — some new federal deductions may not be available on the CA return.

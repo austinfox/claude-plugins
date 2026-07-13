@@ -194,7 +194,9 @@ Qualified Opportunity Zone (QOZ) investments allow taxpayers to defer and potent
 
 ---
 
-## Washington State Capital Gains Tax Interaction
+## State Capital Gains Tax Interactions
+
+### Washington State
 
 Washington State imposes a capital gains excise tax on the sale of long-term financial assets (stocks, bonds, etc.).
 
@@ -210,6 +212,21 @@ Washington State imposes a capital gains excise tax on the sale of long-term fin
 - Consider spreading asset sales across multiple tax years to stay below the WA threshold each year.
 - WA allows a charitable deduction of up to $111,000 for contributions to Washington-based nonprofits, which reduces the amount of gains subject to the WA tax.
 - Coordinate federal tax-loss harvesting with WA exposure — losses that offset gains also reduce WA taxable capital gains.
+
+### California
+
+California taxes capital gains as **ordinary income** — there is no preferential rate for long-term gains. This is the most significant state-level capital gains treatment in the U.S.
+
+**2025 rates:**
+- 1% to 12.3% base brackets, plus the 1% Mental Health Services Tax on taxable income above $1,000,000 (13.3% effective top rate)
+- Both short-term and long-term gains are taxed at the same rates
+- Combined federal + CA marginal rate on LTCG: up to **37.1%** before other interactions (20% federal + 3.8% NIIT + 13.3% CA)
+
+**Planning considerations:**
+- Tax-loss harvesting is especially valuable for CA residents because gains can face a 13.3% top state marginal rate in addition to federal tax
+- Installment sales and 1031 exchanges provide proportionally greater benefit in CA due to higher state rates
+- CA municipal bonds provide double-exempt income (federal + CA tax-free interest)
+- Capital gains harvesting in the 0% federal bracket still triggers CA state income tax — the two calculations are independent
 
 ---
 

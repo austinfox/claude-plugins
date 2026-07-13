@@ -11,10 +11,10 @@ This is a Claude Code plugin marketplace containing plugins by Austin Fox. Each 
 plugins/
   tax-advisor/                     Tax advisor plugin
     .claude-plugin/plugin.json       Plugin manifest
-    skills/tax-advisor/              Auto-triggered skill (SKILL.md) + 7 reference docs
+    skills/tax-advisor/              Auto-triggered skill + on-demand federal, state, profile, and international references
     commands/tax-advisor.md            /tax-advisor slash command with routing logic
     agents/                          4 specialized subagents
-    scripts/                         Bootstrap script for IRS/WA DOR publications
+    scripts/                         Bootstrap script for IRS, FinCEN, SSA, WA DOR, CA FTB, and Skatteverket sources
     tax-knowledge/                   Generated knowledge base (gitignored, per-user)
 ```
 
@@ -47,16 +47,16 @@ Then try `/tax-advisor` or mention taxes in conversation.
 
 - Reference documents in `skills/tax-advisor/references/` are loaded on-demand — keep them under 500 lines each
 - Agents use `${CLAUDE_PLUGIN_ROOT}` for all paths
-- All tax figures must cite their source (IRS publication or WA DOR page)
+- All tax figures and material conclusions must cite current primary authority for the relevant tax year
 - Strategies are risk-rated: Conservative / Moderate / Aggressive
-- Dollar estimates required — never vague advice
-- Bootstrap URLs break when government sites restructure — update `WA_SOURCES` or `IRS_SOURCES` in `bootstrap-knowledge.ts`
+- Quantify when supported by the user's inputs; never fabricate precision
+- Bootstrap URLs break when government sites restructure — update the relevant source group in `bootstrap-knowledge.ts`
 
 ### Tax Year Updates
 
-1. Update brackets, limits, and thresholds in `SKILL.md` and all reference docs
-2. Update bootstrap script URLs if IRS/WA DOR changed their link structure
-3. Run `bun run bootstrap-knowledge.ts --force` to verify all 26 sources download
+1. Update year-specific brackets, limits, and thresholds in the relevant reference docs
+2. Update bootstrap source URLs when any agency changes its link structure
+3. Run `bun run bootstrap-knowledge.ts --force` and review `.bootstrap-status.json` for failed sources
 4. Bump version in `plugins/tax-advisor/.claude-plugin/plugin.json`
 
 ## Validate

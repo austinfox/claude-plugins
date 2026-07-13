@@ -98,7 +98,7 @@ Washington's Business & Occupation (B&O) tax is a gross receipts tax — it appl
 
 **2026 Rate:** The premium rate is scheduled to increase to 1.13% in 2026.
 
-**TAX PLANNING:** Employee PFML premiums are deductible as state and local taxes on federal Schedule A, subject to the SALT deduction cap. Under the One Big Beautiful Bill Act (OBBBA), the SALT cap increases to $40,000 for 2025, which allows more WA taxpayers to benefit from this deduction. At maximum taxable wages ($176,100), the employee PFML premium totals approximately $1,159 per year. This is a meaningful component of the SALT deduction for Washington residents who otherwise have limited state tax deductions (no income tax). Include PFML premiums in your SALT calculation when deciding standard vs. itemized. Combined with property tax, sales tax election, and PFML, WA residents may now reach the SALT cap more often under the $40K OBBBA limit.
+**FEDERAL TREATMENT:** Track the employee-paid PFML amount separately from ordinary SALT. For this plugin's Washington workflow, evaluate it on Schedule A line 6 as an “other tax” rather than automatically subjecting it to the SALT cap, and retain Box 14/pay-stub support. Because payroll-levy treatment can change and software handling differs, verify the filing year's IRS instructions before filing.
 
 ---
 
@@ -119,7 +119,7 @@ Washington's Business & Occupation (B&O) tax is a gross receipts tax — it appl
 
 **Benefit:** Up to $36,500 in lifetime long-term care benefits, available starting July 2026. Benefits are accessed through approved long-term care providers for services such as in-home care, assisted living, and nursing care. Must have contributed for 10 years (or 3 of the last 6 years) to be fully vested.
 
-**TAX PLANNING:** WA Cares premiums may qualify as deductible state taxes on federal Schedule A (subject to SALT cap). At a $200,000 salary, WA Cares costs $1,160 per year. Combined with PFML employee premiums ($1,159 at the wage cap), total deductible Washington payroll taxes can exceed $2,300 per year. For high earners, the uncapped nature of WA Cares means this tax scales linearly with total W-2 compensation. Note: WA Cares premiums are not deductible as a medical expense — they are classified as a payroll tax, not an insurance premium.
+**FEDERAL TREATMENT:** Preserve Box 14/pay-stub support, but do not assume WA Cares receives the same federal deduction treatment as PFML or qualifies as a medical expense. Verify current IRS authority and tax-software mapping before claiming a deduction.
 
 ---
 
@@ -217,5 +217,7 @@ Residents must choose between deducting sales tax OR income tax on Schedule A. S
 **WA Capital Gains Tax and Federal Deductibility:** The WA capital gains tax is classified as an excise tax, not an income tax. It is NOT deductible as a state income tax on Schedule A. However, current IRS guidance should be verified, as this classification has been challenged in court. If the tax were reclassified as an income tax for federal purposes, it could become deductible subject to the SALT cap.
 
 **B&O Tax Deductibility:** B&O tax paid by businesses is deductible as an ordinary business expense on Schedule C (sole proprietors) or as part of business operating expenses for other entity types. Critically, this deduction is NOT subject to the SALT cap — it reduces business income directly. This makes the B&O tax less burdensome in after-tax terms than its gross-receipts basis might suggest.
+
+**Unmarried Co-Owner Mortgage Advantage (Voss v. Commissioner):** WA's high property values make the Voss ruling particularly impactful. In *Voss v. Commissioner*, 796 F.3d 1051 (9th Cir. 2015), the court held that unmarried co-owners each get their own $750,000 acquisition indebtedness limit for mortgage interest deductions. The IRS acquiesced (AOD 2016-02). For Seattle-area homes routinely exceeding $1M, unmarried co-owners effectively get a $1.5M combined limit — double what a married couple filing jointly receives. See `case-law-strategies.md` for full details, dollar impact examples, and planning considerations around marriage timing.
 
 **Dual Estate Tax Planning:** Estates must plan for both the federal exclusion ($13,990,000) and the WA exclusion ($3,000,000) separately. An estate of $5,000,000 owes zero federal estate tax but faces WA estate tax on $2,000,000. The lack of spousal portability at the state level means married couples need bypass trust or disclaimer trust planning to preserve both WA exclusions — a step that is unnecessary at the federal level for estates under $27,980,000 (combined exclusion for married couples).

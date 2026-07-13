@@ -33,9 +33,9 @@ Filing MFS causes the loss or severe reduction of numerous tax benefits:
 
 MFS may still make sense in narrow situations: protecting one spouse from the other's tax liabilities, income-driven student loan repayment optimization, or when one spouse has large medical expenses (the 7.5% AGI floor is lower on lower separate AGI).
 
-### Community Property Considerations (WA-Specific)
+### Community Property Considerations (WA and CA)
 
-Washington is a community property state. All income earned during the marriage is community property, split 50/50 between spouses regardless of who earned it. If filing MFS, each spouse must report half of all community income on their separate return. This eliminates many of the bracket-arbitrage benefits of MFS and makes the filing more complex. Separate property (owned before marriage or received as gift/inheritance) retains its character and is reported by the owning spouse.
+Both Washington and California are community property states. All income earned during the marriage is community property, split 50/50 between spouses regardless of who earned it. If filing MFS, each spouse must report half of all community income on their separate return. This eliminates many of the bracket-arbitrage benefits of MFS and makes the filing more complex. Separate property (owned before marriage or received as gift/inheritance) retains its character and is reported by the owning spouse.
 
 ### Withholding Adjustment
 
@@ -43,7 +43,7 @@ Both spouses should update their W-4s promptly after marriage. The "Two Earners/
 
 ### Combined SALT Benefit
 
-The OBBBA increased the SALT deduction cap to $40,000 for MFJ filers. Two property owners who previously each had separate SALT deductions may now find the combined $40,000 cap more beneficial when filing jointly. Evaluate combined property taxes and sales taxes (WA has no state income tax, so property tax and sales tax are the primary SALT components) and determine whether itemizing exceeds the $31,500 MFJ standard deduction.
+The OBBBA increased the SALT deduction cap to $40,000 for MFJ filers. Two property owners who previously each had separate SALT deductions may now find the combined $40,000 cap more beneficial when filing jointly. Evaluate combined property taxes and state taxes and determine whether itemizing exceeds the $31,500 MFJ standard deduction. **WA:** property tax and sales tax are the primary SALT components. **CA:** state income tax dominates SALT — a dual-income couple may exceed the $40,000 cap from CA income tax alone before counting property taxes.
 
 ### Combined Charitable Giving Strategy
 
@@ -101,7 +101,7 @@ Points (prepaid interest) paid at closing on a home purchase loan are generally 
 
 ### Property Tax (SALT)
 
-Property taxes are deductible as part of the SALT deduction, subject to the **$40,000 cap** (MFJ) under OBBBA ($20,000 MFS). In Washington, where there is no state income tax, property taxes are the primary SALT component. Combined with sales tax deductions, many WA homeowners in high-cost areas can approach this cap.
+Property taxes are deductible as part of the SALT deduction, subject to the **$40,000 cap** (MFJ) under OBBBA ($20,000 MFS). **WA:** Property taxes are the primary SALT component. Combined with sales tax deductions, many WA homeowners in high-cost areas can approach this cap. **CA:** State income tax is the primary SALT component and often exceeds the cap on its own for higher earners. Property taxes are additive but may already be irrelevant once the cap is reached by income tax alone.
 
 ### PMI (Private Mortgage Insurance)
 
@@ -117,7 +117,7 @@ There is **no active federal first-time homebuyer tax credit** for 2025. Various
 
 ### Home Sale Exclusion (Section 121)
 
-Gain from the sale of a primary residence is excluded from income up to **$250,000 (single) / $500,000 (MFJ)**, provided the taxpayer owned and used the home as a primary residence for at least 2 of the 5 years preceding the sale. The exclusion cannot be used more than once every two years. **WA-specific**: real estate gains are excluded from the WA capital gains tax regardless of amount, since the WA capital gains tax exempts real estate transactions.
+Gain from the sale of a primary residence is excluded from income up to **$250,000 (single) / $500,000 (MFJ)**, provided the taxpayer owned and used the home as a primary residence for at least 2 of the 5 years preceding the sale. The exclusion cannot be used more than once every two years. **WA-specific**: real estate gains are excluded from the WA capital gains tax regardless of amount, since the WA capital gains tax exempts real estate transactions. **CA note:** CA conforms to the federal Section 121 exclusion. Gains above the exclusion amount are taxed at CA ordinary income rates (no preferential capital gains rate).
 
 ### Home Equity Loan Interest
 
@@ -159,7 +159,7 @@ If leaving an employer that offers a High Deductible Health Plan (HDHP), existin
 
 - **Relocation**: employer-paid relocation is **taxable income** since TCJA (2018). The employee deduction for moving expenses was eliminated (except active-duty military). Still valuable to negotiate -- it is real money even after taxes. Ask for a tax gross-up if possible.
 - **Severance**: taxed as ordinary income and subject to FICA. Large severance payments may push income into a higher bracket. Consider maximizing 401(k) contributions or timing the severance around year-end to manage bracket impact.
-- **Unemployment**: fully taxable as ordinary income at the federal level. **WA-specific**: Washington has no state income tax, so unemployment benefits are not subject to state income tax.
+- **Unemployment**: fully taxable as ordinary income at the federal level. **WA-specific**: Washington has no state income tax, so unemployment benefits are not subject to state income tax. **CA note**: California taxes unemployment benefits as ordinary income at state rates.
 
 ---
 
@@ -184,6 +184,14 @@ The choice of entity structure has significant tax implications. Reference `self
 - **WA B&O Tax**: Washington imposes a Business & Occupation tax on gross receipts (not net income). Rates vary by classification (e.g., 1.5% for service businesses, 0.471% for manufacturing). Register with the WA Department of Revenue and begin filing B&O returns. The **small business B&O tax credit** covers tax liability on approximately the first **$125,000 of gross income**, effectively exempting very small businesses.
 - **WA Business License**: required for most businesses operating in Washington. Apply through the WA Business Licensing Service. Many cities (Seattle, Bellevue, Tacoma, etc.) also require separate **city business licenses** and may impose city B&O taxes.
 
+### CA-Specific Business Requirements
+
+- **$800 Minimum Franchise Tax**: All LLCs and corporations doing business in CA owe $800/year, regardless of income (first-year exemption applies). This applies even to dormant or loss-making entities.
+- **LLC Fee**: In addition to the $800 minimum, LLCs owe an annual fee based on total income: $900 ($250K-$500K), $2,500 ($500K-$1M), $6,800 ($1M-$5M), $11,790 ($5M+).
+- **S-Corp 1.5% Tax**: CA imposes a 1.5% tax on S-Corp net income (minimum $800) at the entity level, in addition to pass-through taxation.
+- **C-Corp 8.84% Rate**: CA corporate income tax rate on net income.
+- **State Registration**: register with the CA Secretary of State and CA Franchise Tax Board. City business licenses and taxes may also apply (e.g., San Francisco business tax).
+
 ---
 
 ## Retirement
@@ -198,7 +206,7 @@ Modified AGI above **$106,000 (single) / $212,000 (MFJ)** triggers Income-Relate
 
 ### Roth Conversion Ladder
 
-Convert traditional IRA/401(k) balances to Roth annually, targeting amounts that **fill up lower tax brackets** without pushing into unnecessarily high marginal rates. **WA advantage**: zero state income tax on conversions, making Washington one of the best states for aggressive Roth conversion strategies. The **5-year rule**: each conversion must age 5 years before the converted amount can be withdrawn penalty-free if under age 59 1/2. After age 59 1/2, the 5-year rule on conversions does not apply.
+Convert traditional IRA/401(k) balances to Roth annually, targeting amounts that **fill up lower tax brackets** without pushing into unnecessarily high marginal rates. **WA advantage**: zero state income tax on conversions, making Washington one of the best states for aggressive Roth conversion strategies. **CA cost**: conversions are taxed at full CA ordinary rates (9.3-13.3%), making CA one of the most expensive states for Roth conversions. CA residents should factor the state tax cost into the breakeven analysis or consider deferring conversions if planning to move to a lower-tax state. The **5-year rule**: each conversion must age 5 years before the converted amount can be withdrawn penalty-free if under age 59 1/2. After age 59 1/2, the 5-year rule on conversions does not apply.
 
 ### RMD Planning
 
@@ -214,7 +222,7 @@ Available at age **70 1/2 or older**. Donate up to **$105,000** per year directl
 
 ---
 
-## Moving to/from Washington State
+## Interstate Moves
 
 ### Moving TO Washington from an Income-Tax State
 
@@ -224,14 +232,30 @@ Time income recognition carefully to maximize the benefit of WA's lack of state 
 
 Accelerate income recognition into WA years before establishing residency in the new state. Perform Roth conversions, sell appreciated assets, and exercise stock options while still a WA resident. Once you establish residency in an income-tax state, all future income will be subject to that state's tax. Every dollar of conversion or gain recognized in WA is a dollar that avoids state income tax.
 
+### WA ↔ CA Moves (Special Considerations)
+
+**Moving from CA to WA:**
+- Accelerate income into WA years and defer into CA years is reversed — accelerate deductions and defer income recognition before leaving CA
+- Complete Roth conversions **after** establishing WA residency (saves 9.3-13.3% CA tax per conversion dollar)
+- Model appreciated-asset sales after a genuine residency change using the sale year's WA and CA rules; CA's effective top rate is 13.3%, while WA has its own indexed capital-gains deduction, exemptions, and rates
+- CA aggressively audits departures. Maintain thorough documentation: sell or lease CA home, change driver's license, register to vote in WA, update all accounts. CA's FTB may continue to assert residency for 1-2 years after a claimed move if factors suggest you maintained CA ties
+- RSU/stock option income may still be partially CA-sourced based on CA service days during the vesting/grant-to-exercise period, even after moving to WA
+
+**Moving from WA to CA:**
+- Accelerate income into WA (no state tax): Roth conversions, stock sales, option exercises, bonus timing
+- Once CA residency begins, all worldwide income is subject to CA tax
+- CA estimated tax payments begin immediately — do not wait until year-end
+
 ### Part-Year Residency Rules
 
 Most income-tax states tax income earned while a resident of that state. Establish a clear residency change date with thorough documentation: **driver's license**, **voter registration**, **lease or home purchase**, change of address with USPS, updated bank and financial account addresses, and updated employer records. Some states (notably California and New York) aggressively audit residency changes and may attempt to tax income earned after a claimed move if documentation is insufficient.
 
-### WA Cares Fund
+### WA Cares Fund / CA SDI
 
-Washington's long-term care insurance program imposes a payroll premium on W-2 workers. If leaving Washington, workers may qualify for a **new exemption effective January 1, 2026** for out-of-state workers. Track legislative updates as this provision is relatively new and implementation details may evolve.
+**WA:** Washington's long-term care insurance program imposes a payroll premium on W-2 workers. If leaving Washington, workers may qualify for a **new exemption effective January 1, 2026** for out-of-state workers. Track legislative updates as this provision is relatively new and implementation details may evolve.
 
-### WA Community Property and Basis Step-Up
+**CA:** Verify the tax-year SDI rate (1.2% for 2025; 1.3% for 2026), wage-base rules, work location, and federal deductibility. Do not assume withholding ends solely because the employee changes mailing address.
 
-Assets acquired during Washington residence are community property. At the death of one spouse, **both halves** of community property receive a full stepped-up basis to fair market value -- unlike common-law states where only the decedent's half receives a step-up. This is a significant estate planning advantage for married couples with highly appreciated assets acquired during WA residency. If moving to a common-law state, community property character generally follows the asset, but consult with an estate planning attorney to ensure proper documentation and preservation of this benefit.
+### Community Property and Basis Step-Up (WA and CA)
+
+Both Washington and California are community property states. Assets acquired during residence in either state are community property. At the death of one spouse, **both halves** of community property receive a full stepped-up basis to fair market value — unlike common-law states where only the decedent's half receives a step-up. This is a significant estate planning advantage for married couples with highly appreciated assets. If moving to a common-law state from either WA or CA, community property character generally follows the asset, but consult with an estate planning attorney to ensure proper documentation and preservation of this benefit.

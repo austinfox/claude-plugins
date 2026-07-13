@@ -27,9 +27,11 @@ Your cost basis in RSU shares equals the **FMV at the vest date** — the amount
 
 Most employers default to sell-to-cover: at vesting, enough shares are sold to cover the tax withholding, and the remaining shares are deposited in your brokerage account. This is generally the most practical approach, but remember the withholding amount is based on the 22% supplemental rate — not your actual marginal rate.
 
-### Washington State Capital Gains Consideration
+### State Tax Consideration
 
-For WA residents, RSU shares sold after vesting are subject to the WA capital gains tax if your net long-term capital gains exceed the **$278,000 threshold**. The rate is **7% on gains up to $500,000** and **9.9% on gains above $500,000**. This applies to the appreciation after vesting — not the ordinary income at vest (which is not subject to WA tax since WA has no income tax).
+**WA residents:** RSU shares sold after vesting are subject to the WA capital gains tax if your net long-term capital gains exceed the **$278,000 threshold**. The rate is **7% on gains up to $1,000,000** and **9.9% on gains above $1,000,000**. This applies to the appreciation after vesting — not the ordinary income at vest (which is not subject to WA tax since WA has no income tax).
+
+**CA residents:** RSU vesting income is subject to CA ordinary rates (12.3% base top rate plus 1% Mental Health Services Tax on taxable income above $1M, for a 13.3% effective top rate). Post-vest gains receive no preferential CA rate. Retrieve the tax-year supplemental withholding schedule; withholding is not the final tax rate, so model any gap.
 
 ### Planning Strategies
 
@@ -92,7 +94,7 @@ Qualifying ESPP plans offer up to a **15% discount** on company stock, with a **
 
 ### Planning Strategies
 
-ESPP is **almost always free money** — participate at the maximum contribution. The guaranteed 15% discount, especially with a lookback provision, produces an instant, outsized return. Even an **immediate sale at disqualifying disposition rates is profitable**: you pay ordinary income tax only on the discount, and you pocket the after-tax difference with zero market risk. At minimum, every eligible employee should participate and sell immediately for a risk-free return minus ordinary income tax on the discount. Holding for a qualifying disposition can improve the tax outcome but introduces stock price risk during the holding period.
+ESPP is **almost always free money** — participate at the maximum contribution. The guaranteed 15% discount, especially with a lookback provision, produces an instant, outsized return. Even an **immediate sale at disqualifying disposition rates is profitable**: you pay ordinary income tax only on the discount, and you pocket the after-tax difference with zero market risk. At minimum, every eligible employee should participate and sell immediately for a risk-free return minus ordinary income tax on the discount. Holding for a qualifying disposition can improve the tax outcome but introduces stock price risk during the holding period. **CA note:** ESPP discount income is subject to CA income tax at ordinary rates. The after-tax return on immediate ESPP sales is lower for CA residents (up to 13.3% state tax on the discount) than for WA residents (no state tax).
 
 ## 83(b) Election
 
@@ -147,9 +149,11 @@ Report all crypto transactions on **Form 8949**. Beginning in 2025, centralized 
 
 A major change for 2025: **crypto is now subject to wash sale rules**, which were codified to include digital assets. You can no longer sell crypto at a loss, immediately repurchase the same asset, and claim the loss. The 30-day wash sale window applies just as it does to stocks and securities. Plan your tax-loss harvesting accordingly — you must wait 31 days before repurchasing the same crypto, or harvest into a meaningfully different asset.
 
-### WA Capital Gains
+### State Capital Gains on Crypto
 
-Crypto gains count toward the **$278,000 WA capital gains threshold**. Long-term crypto gains above this amount are subject to the 7%/9.9% WA capital gains tax.
+**WA:** Crypto gains count toward the **$278,000 WA capital gains threshold**. Long-term crypto gains above this amount are subject to the 7%/9.9% WA capital gains tax.
+
+**CA:** Crypto gains receive no preferential state rate. Apply the 1%–12.3% base brackets plus the 1% Mental Health Services Tax on taxable income above $1M (13.3% effective top rate).
 
 ## Real Estate Investment Taxation
 
@@ -226,6 +230,13 @@ Place your **highest expected growth** investments here, since all growth is tax
 - Emerging market funds
 - Speculative positions — if they produce large gains, those gains are never taxed
 
-### Note for Washington State Residents
+### State-Specific Notes
 
-Since WA has no state income tax, the asset location benefit for WA residents is **purely federal** — there is no state-level tax drag to optimize around. However, the federal benefit remains significant at higher income levels, where the spread between ordinary income rates (up to 37%) and long-term capital gains rates (up to 20%) creates meaningful savings from proper asset placement. Additionally, the absence of state income tax makes Roth conversions and taxable brokerage gains relatively more attractive for WA residents compared to residents of high-income-tax states.
+**Washington State:** Since WA has no state income tax, the asset location benefit for WA residents is **purely federal** — there is no state-level tax drag to optimize around. However, the federal benefit remains significant at higher income levels, where the spread between ordinary income rates (up to 37%) and long-term capital gains rates (up to 20%) creates meaningful savings from proper asset placement. Additionally, the absence of state income tax makes Roth conversions and taxable brokerage gains relatively more attractive for WA residents compared to residents of high-income-tax states.
+
+**California:** CA residents face an additional layer of asset-location planning because taxable investment income can face a 13.3% top state marginal rate. Key CA-specific considerations:
+- **Municipal bonds:** CA-issued munis are double-exempt (federal + CA tax-free). Placing CA munis in taxable accounts provides the maximum benefit. Non-CA munis are only federally exempt and are subject to CA tax.
+- **Roth accounts:** Even more valuable for CA residents because tax-free growth avoids both federal and CA income tax on distributions.
+- **Tax-deferred accounts:** The benefit of deferring ordinary income in traditional 401(k)/IRA is amplified by the additional 9.3-13.3% CA tax deferral.
+- **Taxable accounts:** CA's treatment of capital gains as ordinary income reduces the usual advantage of holding growth stocks in taxable accounts. Index funds still benefit from tax-deferred growth, but the long-term capital gains rate advantage does not apply at the state level.
+- **HSA caution:** CA does not recognize HSA tax benefits. HSA contributions are not deductible for CA, and earnings are taxable for CA purposes. This reduces (but does not eliminate) the triple tax advantage — the federal benefit remains.

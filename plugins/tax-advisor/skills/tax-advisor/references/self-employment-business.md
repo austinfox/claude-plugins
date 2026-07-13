@@ -58,6 +58,15 @@ S-Corp election generally becomes beneficial when net business profit exceeds **
 ### Washington State Note
 S-Corp election does **not** change B&O (Business and Occupation) tax liability. B&O is a gross receipts tax, not an income-based tax, so the entity structure is largely irrelevant for B&O purposes.
 
+### California Note
+CA imposes a **1.5% tax on S-Corp net income** (minimum $800 franchise tax per year), making S-Corp treatment more expensive in CA than in most states. The S-Corp election trade-off for CA residents:
+- **SE tax savings** from the salary/distribution split (same as federal analysis)
+- **Minus** the 1.5% CA entity-level tax on net income
+- **Minus** the $800 minimum franchise tax (owed even in loss years after the first year)
+- **Plus** $800 minimum franchise tax as LLC if not electing S-Corp status
+
+Additionally, LLCs in CA owe an **annual LLC fee** based on total income ($900-$11,790), which does not apply to S-Corps. For higher-revenue businesses, the S-Corp election may actually reduce total CA entity-level tax by avoiding the LLC fee. The C-Corp rate in CA is **8.84%** on net income (minimum $800).
+
 ---
 
 ## Entity Comparison
@@ -117,6 +126,8 @@ The regular method usually produces a larger deduction for larger offices or mor
 **Depreciation note**: Under the regular method, depreciation on the business portion of the home is required (not optional). This depreciation is recaptured at sale as ordinary income taxed at up to 25%, even if the simplified method was used in other years.
 
 **Washington State advantage**: No state income tax means the federal deduction is the sole benefit, but it remains significant at federal marginal rates of 22-37%.
+
+**California note**: CA does not conform to federal bonus depreciation rules. Home office depreciation claimed on the federal return may need to be adjusted on the CA return. The CA standard deduction for the home office simplified method follows the same $1,500 cap, but the regular method may produce different results due to depreciation conformity gaps.
 
 ### Vehicle Deduction
 

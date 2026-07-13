@@ -1,7 +1,7 @@
 {
   "name": "tax-advisor",
-  "version": "1.0.0",
-  "description": "Proactive US tax advisor specializing in Washington State — aggressive but legal strategies grounded in current IRS publications and WA DOR guidance",
+  "version": "1.2.0",
+  "description": "Source-backed US tax advisor with Washington, California, and US–Sweden cross-border guidance, including foreign tax credit and international reporting",
   "author": {
     "name": "Austin Fox"
   },
@@ -10,6 +10,11 @@
     "tax",
     "irs",
     "washington-state",
+    "california",
+    "sweden",
+    "foreign-tax-credit",
+    "international-tax",
+    "expat-tax",
     "tax-planning",
     "tax-strategy",
     "estimated-taxes",

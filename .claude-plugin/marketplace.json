@@ -4,20 +4,25 @@
     "name": "Austin Fox"
   },
   "metadata": {
-    "description": "Proactive US tax advisor plugin for Claude Code — aggressive but legal tax strategies with WA State specialization"
+    "description": "Source-backed US tax advisor plugin for Claude Code with WA, CA, and US–Sweden cross-border coverage"
   },
   "plugins": [
     {
       "name": "tax-advisor",
       "source": "./plugins/tax-advisor",
-      "description": "Proactive tax advisor with auto-triggered skill, /tax command, and specialized subagents for structured tax analysis",
-      "version": "1.0.0",
+      "description": "US tax planning, document review, estimates, and international guidance with FTC, expat, WA, CA, and Sweden coverage",
+      "version": "1.2.0",
       "category": "productivity",
       "tags": [
         "tax",
         "irs",
         "tax-planning",
         "washington-state",
+        "california",
+        "sweden",
+        "foreign-tax-credit",
+        "international-tax",
+        "expat-tax",
         "estimated-taxes",
         "capital-gains",
         "retirement",

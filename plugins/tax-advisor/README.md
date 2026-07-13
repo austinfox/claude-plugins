@@ -1,103 +1,83 @@
 # Tax Advisor Plugin
 
-A proactive US tax advisor plugin for Claude Code — specializing in Washington State residents with aggressive-but-legal strategies grounded in current IRS publications and WA DOR guidance.
+A source-backed U.S. tax advisor plugin for Claude Code. It supports general federal planning and return review, detailed Washington and California issues, and U.S.–Sweden cross-border cases.
 
 ## Features
 
-- **Auto-triggered skill** — activates on any tax-related conversation
-- **`/tax-advisor` command** — explicit invocation for specific questions
-- **4 specialized subagents** for deep analysis:
-  - **Tax Situation Analyzer** — structured interview + optimization report
-  - **Tax Document Reviewer** — reads W-2s/1099s, finds missed opportunities
-  - **Tax Strategy Explorer** — creative aggressive-but-legal strategies with risk ratings
-  - **Tax Quarterly Estimator** — quarterly payment calculator with credit card optimization
-- **7 reference documents** — loaded on demand for deep dives
-- **Bootstrap script** — downloads latest IRS publications and WA DOR guidance
+- **Auto-triggered skill** for U.S. tax questions
+- **`/tax-advisor` command** for explicit routing
+- **4 specialized agents**:
+  - Tax Situation Analyzer — comprehensive fact gathering and optimization report
+  - Tax Document Reviewer — document reconciliation, errors, and missed items
+  - Tax Strategy Explorer — scenario planning with authority and risk ratings
+  - Tax Quarterly Estimator — federal/state safe-harbor and payment schedules
+- **On-demand references** for federal income, capital gains, investments, business, WA, CA, case law, life events, deadlines, profiles/privacy, and U.S. international/Sweden
+- **International coverage** for Form 1116, FTC carryovers, FTC versus FEIE, treaty re-sourcing, FBAR, Form 8938, PFICs, foreign pensions/entities/trusts, and totalization
+- **Government-source bootstrap** for IRS, FinCEN, SSA, WA DOR, CA FTB, and Skatteverket material
+- **Opt-in profiles** that are gitignored and exclude sensitive identifiers
 
 ## Installation
 
 ```bash
-# Add the marketplace
 /plugin marketplace add austinfox/claude-plugins
-
-# Install the plugin
 /plugin install tax-advisor@austinfox-claude-plugins
 ```
 
 ## Setup
 
-After installation, bootstrap the tax knowledge base:
+Requires [Bun](https://bun.sh).
 
 ```bash
-cd scripts
+cd plugins/tax-advisor/scripts
 bun install
 bun run bootstrap-knowledge.ts
 ```
 
-This downloads the latest IRS publications and WA DOR guidance into `tax-knowledge/` (gitignored — each user generates their own). The knowledge base auto-refreshes every 30 days. Use `--force` to re-download immediately.
-
-### Prerequisites
-
-- [Bun](https://bun.sh) runtime (`curl -fsSL https://bun.sh/install | bash`)
+Use `--force` to refresh. The generated `tax-knowledge/` directory is gitignored. `.bootstrap-status.json` records per-source success or failure.
 
 ## Usage
 
-### Automatic activation
-
-Start any conversation about taxes — the skill auto-activates and checks for the bootstrapped knowledge base.
-
-### Explicit invocation
-
-```
-/tax-advisor strategies for capital gains
-/tax-advisor review my W-2
-/tax-advisor estimate Q1 payment
-/tax-advisor compare standard vs itemized
-/tax-advisor self-employment deductions
-/tax-advisor WA capital gains planning
+```text
+/tax-advisor compare standard vs itemized for 2025
+/tax-advisor review my W-2 and prior return
+/tax-advisor estimate my 2026 Q3 payment
+/tax-advisor plan for Washington capital gains
+/tax-advisor compare a Roth conversion while living in California
+/tax-advisor calculate Form 1116 for Swedish wages and tax
+/tax-advisor screen my Swedish ISK for U.S. reporting issues
 ```
 
-### Agent workflows
+Simple questions are answered directly. Document upload and profile creation are not prerequisites. For detailed calculations, the plugin asks only for facts that materially change the answer.
 
-Ask for deep analysis and the appropriate agent will be dispatched:
+## U.S.–Sweden workflow
 
-- "Review my complete tax situation" → Tax Situation Analyzer
-- "Look at my W-2 and find what I'm missing" → Tax Document Reviewer
-- "What aggressive strategies am I missing?" → Tax Strategy Explorer
-- "How much should I pay for Q1 estimated taxes?" → Tax Quarterly Estimator
+The international reference requires the advisor to reconcile:
 
-## Tax Year Coverage
+1. Worldwide U.S. income and source by work location/type
+2. Swedish preliminary withholding versus final legal tax
+3. Form 1116 category, paid/accrued method, SEK/USD conversion, limitation, and carryover
+4. FTC versus Form 2555/FEIE
+5. Article 23 treaty credit sequencing and re-sourcing for U.S.-source income
+6. FBAR/Form 8938 and PFIC, pension, entity, trust, and totalization flags
 
-**2025 tax year** (for returns filed in 2026), incorporating:
+Swedish tax wrappers such as ISK or KF are not assumed to receive equivalent U.S. treatment.
 
-### Federal (post-One Big Beautiful Bill Act, signed July 4, 2025)
-- TCJA made permanent (brackets, standard deduction, estate exemption)
-- Standard deduction increased: $15,750 single / $31,500 MFJ
-- SALT cap raised to $40,000 (2025-2029)
-- Child Tax Credit: $2,200/child
-- Section 179: $2,500,000
-- New deductions: tips ($25K), overtime ($12.5K), auto loan interest ($10K)
-- Senior Bonus Deduction: $6,000 for 65+ (2025-2028)
-- Clean Vehicle and Energy credits ended
+## Tax-year discipline
 
-### Washington State (post-SB 5813, SB 5814, HB 2081, signed May 20, 2025)
-- Capital gains tax: tiered 7%/9.9% rate, $278K deduction
-- B&O tax: tiered rates by gross income
-- PFML: 0.92% total premium
-- WA Cares: 0.58% (no cap)
-- Estate tax: $3M exclusion, top rate 35%
-- Sales tax expanded to IT services, web development, and more
+References may contain year-specific planning material. The skill requires the advisor to establish the requested tax year and verify changing figures against current primary authority before using them. Bootstrap sources use stable “latest” URLs where available and keep tax-year index pages for inflation-adjusted items.
 
-## Philosophy
+## Privacy
 
-This advisor is **aggressive but legal**:
+Profiles are optional. When enabled, they are stored under `user-profiles/` (gitignored). The plugin must not persist SSNs/TINs, full account numbers, credentials, unredacted tax documents, or other unnecessary sensitive data.
 
-- Pushes boundaries within the law
-- Understands economic substance doctrine, step transaction doctrine, business purpose doctrine
-- Rates every strategy: Conservative / Moderate / Aggressive
-- Cites legal basis (IRC sections, case law) for aggressive positions
-- Notes audit risk and documentation requirements
+## Local validation
+
+```bash
+claude plugin validate .
+cd plugins/tax-advisor/scripts
+bun run bootstrap-knowledge.ts --force
+```
 
 ## Disclaimer
 
-This plugin provides educational tax information, not professional tax advice. Consult a CPA or tax attorney for advice specific to your situation. Tax laws change frequently — verify current figures before filing.
+This plugin provides educational tax information, not professional tax advice. Cross-border treaty positions, PFICs, foreign pensions/entities/trusts, and delinquent international forms should be reviewed by a qualified U.S. international tax professional.
