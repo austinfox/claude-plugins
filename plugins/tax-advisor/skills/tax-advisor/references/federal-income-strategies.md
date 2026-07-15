@@ -77,15 +77,15 @@ The One Big Beautiful Bill Act made the TCJA individual tax rates **permanent**.
 
 ### NEW: Senior Bonus Deduction (OBBBA, 2025-2028)
 
-The OBBBA introduced a temporary additional standard deduction for seniors:
+The OBBBA introduced a temporary additional deduction for seniors:
 
-- **Amount:** $6,000 additional deduction for taxpayers age 65 or older
-- **Income limits:** MAGI below $75,000 (single) / $150,000 (MFJ)
-- **Phase-out:** The $6,000 phases out ratably for MAGI between the threshold and $15,000 above it ($75K-$90K single, $150K-$165K MFJ)
-- **Effective period:** Tax years 2025 through 2028 only
-- **Combined effect:** A single filer age 65+ with MAGI under $75K receives $15,750 + $2,000 + $6,000 = **$23,750** total standard deduction
-- **Itemizers:** This bonus is only available with the standard deduction, not for itemizers
-- **Planning:** For clients with MAGI near the threshold, explore strategies to reduce MAGI below $75,000/$150,000 (maximize pre-tax retirement contributions, HSA contributions, above-the-line deductions)
+- **Amount:** $6,000 per eligible taxpayer age 65 or older
+- **Phase-out begins:** MAGI over $75,000 (single) / $150,000 (joint)
+- **Effective period:** Tax years 2025 through 2028
+- **Availability:** Eligible itemizers and non-itemizers can claim it on Schedule 1-A; it is separate from the existing additional standard deduction for age/blindness
+- **Non-itemizer example:** A qualifying single filer with MAGI below the phase-out threshold may combine the $15,750 standard deduction, $2,000 age-based addition, and $6,000 senior deduction
+- **Planning:** Verify the Schedule 1-A phase-out calculation before using AGI-reduction strategies; do not describe this as available only with the standard deduction
+- **Source:** [IRS Working Families Tax Cuts — deduction for seniors](https://www.irs.gov/newsroom/working-families-tax-cuts-individuals-and-workers#seniors)
 
 ---
 
@@ -102,7 +102,7 @@ The OBBBA introduced a temporary additional standard deduction for seniors:
 
 **Super catch-up detail (SECURE 2.0 Section 109):** Participants who are ages 60, 61, 62, or 63 at the end of the tax year receive a higher catch-up contribution limit of $11,250. This replaces (does not add to) the standard $7,500 catch-up. At age 64, the participant reverts to the standard $7,500 catch-up.
 
-**Traditional vs. Roth 401(k) decision:** Traditional provides a deduction now with taxed withdrawals in retirement. Roth provides no deduction now but tax-free withdrawals. Choose Roth when current marginal rate is lower than expected retirement rate, or in no-income-tax states (e.g., Washington) where there is no state tax benefit from traditional deferrals. Choose traditional when current marginal rate is high and expected retirement rate is lower.
+**Traditional vs. Roth 401(k) decision:** Traditional provides a deduction now with taxed withdrawals in retirement. Roth provides no deduction now but tax-free withdrawals. Choose Roth when current marginal rate is lower than expected retirement rate, or in no-income-tax states (e.g., Washington) where there is no state tax benefit from traditional deferrals. In high-tax states (e.g., CA at 9.3-13.3%), the state tax cost of Roth contributions is significant — the traditional 401(k) provides a valuable CA tax deduction that should be factored into the analysis. Choose traditional when current marginal rate is high and expected retirement rate is lower.
 
 ### Traditional and Roth IRA
 
@@ -144,19 +144,67 @@ For high earners above Roth IRA direct contribution income limits:
 For taxpayers whose 401(k) plan permits after-tax (non-Roth) contributions and in-service distributions or in-plan Roth rollovers:
 
 1. Max out pre-tax or Roth 401(k) deferrals ($23,500)
-2. Contribute after-tax dollars up to the $70,000 Section 415(c) limit (minus employee deferrals and employer match/contributions)
+2. Contribute after-tax dollars up to the $70,000 Section 415(c) limit minus employee deferrals **and employer contributions**
 3. Convert after-tax contributions to Roth via in-plan Roth rollover or rollover to Roth IRA
 
-**Potential additional Roth space:** Up to approximately $46,500 per year beyond normal deferrals, depending on employer contributions.
+#### Correct MBDR Capacity Formula
 
-**Requires plan support** — not all 401(k) plans allow after-tax contributions or in-service distributions/rollovers. Verify plan document terms before advising.
+```
+MBDR_capacity = $70,000 - employee_deferrals - employer_contributions
+```
+
+The Section 415(c) annual addition limit ($70,000 for 2025) includes **all** contributions to defined contribution plans: employee elective deferrals, employer matching contributions, employer non-elective contributions (profit sharing, etc.), and employee after-tax contributions.
+
+**Catch-up contributions (IRC 414(v)) do NOT count against the 415(c) limit.** For employees age 50+ or 60-63 using catch-up, use deferrals excluding the catch-up portion in the formula.
+
+#### Determining Employer Contributions
+
+Employer contributions are essential for an accurate MBDR calculation. Derive them in priority order:
+
+1. **Plan/benefits statement** — Most direct. Look for "employer match," "employer contributions," "company match" on plan statements or summary annual reports.
+2. **Profile data** — If previously stored in the user's profile (`retirement.totalEmployerContribution`).
+3. **Match formula calculation** — Apply the employer's match formula to the employee's salary. Common formulas:
+   - 50% of first 6% of salary (e.g., $200K salary → $6,000 match)
+   - 100% of first 3% + 50% of next 2% (e.g., $200K salary → $8,000 match)
+   - Dollar-for-dollar up to 4% (e.g., $200K salary → $8,000 match)
+   - Plus any non-elective (profit-sharing) contributions
+4. **Document cross-reference** — If total 415(c) additions are known: `employer_contributions = $70,000 - (employee_deferrals + after_tax_contributions)`
+5. **Ask the user** — As a last resort: "How much does your employer contribute to your 401(k) annually? This includes match and any profit-sharing/non-elective contributions."
+
+#### Realistic Capacity Examples
+
+| Scenario | Deferrals | Employer Match | MBDR Capacity |
+|----------|-----------|----------------|---------------|
+| $200K salary, 50% of 6% match | $23,500 | $6,000 | **$40,500** |
+| $200K salary, 100% of 4% match | $23,500 | $8,000 | **$38,500** |
+| $250K salary, 50% of 6% + 3% profit sharing | $23,500 | $12,000 | **$34,500** |
+| $150K salary, 100% of 6% match | $23,500 | $9,000 | **$37,500** |
+| Age 52, $200K, 50% of 6% match | $23,500 (excl. catch-up) | $6,000 | **$40,500** |
+
+Typical MBDR capacity with a meaningful employer match is **$24,000-$40,500**, not the theoretical maximum of $46,500 (which assumes zero employer contributions).
+
+#### "Already Maxing" Detection
+
+If a taxpayer's after-tax contributions approximately equal their MBDR capacity (within ~$500), they are **fully utilizing** MBDR. Confirm this rather than suggesting additional room. Compare:
+- Confirmed after-tax contributions from plan contribution-source records
+- Against calculated MBDR capacity
+
+A code G Form 1099-R alone is not proof of MBDR; it can report an ordinary plan rollover or designated Roth rollover.
+
+#### Plan Requirements
+
+**Requires plan support** — not all 401(k) plans allow after-tax contributions or in-service distributions/rollovers. Two features must both be present:
+1. **After-tax (non-Roth) employee contributions** — the plan must explicitly allow these
+2. **In-plan Roth rollover or in-service distribution** — to convert after-tax contributions to Roth
+
+Verify plan document terms before advising. If the plan lacks either feature, MBDR is not available.
 
 ### Roth Conversion Strategy
 
 Converting traditional IRA or 401(k) balances to Roth triggers ordinary income tax in the year of conversion but provides tax-free growth and withdrawals thereafter. Optimal scenarios include:
 
 - **Low-income years:** Sabbatical, early retirement, career transition, gap between jobs
-- **No-state-income-tax residents (e.g., Washington):** Federal tax is the only cost of conversion — no state tax drag
+- **No-state-income-tax residents (e.g., Washington):** Federal tax is the only cost of conversion — no state tax drag. Conversely, in high-tax states like CA (9.3-13.3%), the state tax cost of Roth conversions is significant — a $100K conversion costs an additional $9,300-$13,300 in CA state tax compared to $0 in WA
 - **Filling lower brackets:** Convert enough each year to fill the 12% or 22% bracket without pushing into a higher bracket
 - **Before RMDs begin:** RMDs start at age 73 under SECURE 2.0. Converting balances down before mandatory distributions prevents forced higher-bracket income in later years
 - **Young taxpayers:** Decades of tax-free compounding ahead maximizes the value of Roth treatment
@@ -210,11 +258,12 @@ If a taxpayer becomes HSA-eligible on or before December 1, they may contribute 
 ### Key Itemized Deductions
 
 **State and Local Taxes (SALT):**
-- Cap increased to **$40,000** under OBBBA (up from $10,000 under TCJA), effective 2025-2029
-- Phase-down: The $40,000 cap is reduced for taxpayers with MAGI above $500,000 (both single and MFJ)
+- For 2025, the cap is **$40,000** for filing statuses other than MFS and **$20,000** for MFS; verify indexed amounts for later years
+- The phase-down begins at the tax-year MAGI threshold ($500,000 for 2025, or $250,000 MFS) and does not reduce the cap below the statutory floor
 - The cap amount rises by approximately 1% per year through 2029
 - Includes state income tax OR state/local sales tax (taxpayer elects), plus real property tax, plus personal property tax
 - For no-income-tax state residents (e.g., WA, TX, FL): SALT deduction is limited to property taxes plus the sales tax election
+- For CA residents: include supported California income tax and deductible property/payroll taxes, then apply the federal tax-year cap and phase-down
 
 **Mortgage Interest:**
 - Deductible on acquisition indebtedness up to $750,000 (for loans originated after December 15, 2017)
@@ -229,7 +278,7 @@ If a taxpayer becomes HSA-eligible on or before December 1, they may contribute 
 - Substantiation requirements: written acknowledgment from charity for gifts of $250+; Form 8283 for non-cash gifts over $500; qualified appraisal for non-cash gifts over $5,000
 
 **Medical and Dental Expenses:**
-- Deductible to the extent they exceed 7.5% of AGI (made permanent by OBBBA)
+- Deductible to the extent they exceed 7.5% of AGI; the Taxpayer Certainty and Disaster Tax Relief Act of 2020 made the 7.5% threshold permanent
 - Typically beneficial only in years with very large medical expenses or very low AGI
 - Includes premiums not paid pre-tax, co-pays, prescriptions, dental, vision, long-term care premiums (with age-based limits)
 
@@ -445,18 +494,6 @@ The following credits were repealed or had their expiration accelerated by the O
 
 ---
 
-## Key Planning Considerations for 2025
+## 2025 verification priorities
 
-1. **OBBBA transition year:** Many OBBBA provisions take effect in 2025. Verify exact effective dates — some are retroactive to January 1, 2025, while others are effective from the date of enactment. Filing software should handle this, but manual calculations require care.
-
-2. **SALT cap increase impact:** The jump from $10,000 to $40,000 is significant. Taxpayers in high-tax states who defaulted to the standard deduction under the $10K cap should recalculate. Many will now benefit from itemizing. Even in no-income-tax states, high property taxes combined with sales tax election may now exceed the standard deduction when combined with mortgage interest and charitable contributions.
-
-3. **Senior bonus deduction optimization:** For clients age 65+ with MAGI near the $75,000/$150,000 threshold, identify strategies to reduce MAGI below the threshold: maximize pre-tax 401(k) contributions, HSA contributions, take advantage of above-the-line deductions. The $6,000 additional deduction at a 22% marginal rate saves $1,320 in tax.
-
-4. **Roth conversion planning:** With TCJA rates now permanent, there is no "convert before rates increase" deadline. However, converting during lower-income years (early retirement, sabbatical, pre-RMD age) remains the optimal approach. Model multi-year conversion schedules to minimize lifetime tax.
-
-5. **Tip and overtime documentation:** Workers eligible for the new tip and overtime deductions should ensure proper documentation. Tips must be reported through employer W-2 processes. Overtime must meet FLSA definitions. These deductions reduce income tax but not FICA.
-
-6. **Energy credit deadline awareness:** Any planned energy improvements should have been completed and placed in service before the applicable termination dates. For 2025 returns, verify that installation was complete (placed in service) by the deadline, not merely contracted or paid for.
-
-7. **Bracket management:** With permanent rates, multi-year income smoothing strategies (Roth conversions, capital gains harvesting, retirement account withdrawal sequencing) can be planned with greater confidence. Model taxable income across brackets to identify opportunities to fill lower brackets each year.
+Before recommending a 2025 position, verify the provision's effective date, Schedule 1-A reporting and phase-out, placed-in-service requirement, and state conformity. Model itemizing, retirement contributions, Roth conversions, and income timing using the taxpayer's full return rather than a marginal-rate shortcut.

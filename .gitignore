@@ -1,6 +1,9 @@
 # Tax knowledge base — generated per user by bootstrap script
 **/tax-knowledge/
 
+# User profiles — per-user tax data, never committed
+**/user-profiles/
+
 # Dependencies
 **/node_modules/
 

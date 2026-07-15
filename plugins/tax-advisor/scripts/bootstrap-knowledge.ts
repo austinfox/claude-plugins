@@ -2,8 +2,8 @@
 /**
  * Bootstrap Tax Knowledge Base
  *
- * Downloads the latest IRS publications and WA DOR guidance into tax-knowledge/
- * so the tax advisor skill and agents can reference current, authoritative source material.
+ * Downloads IRS publications, U.S. international guidance, WA DOR, CA FTB,
+ * and Swedish government guidance into tax-knowledge/ for source-backed analysis.
  *
  * Usage:
  *   bun run scripts/bootstrap-knowledge.ts
@@ -23,7 +23,11 @@ const KNOWLEDGE_DIR = join(ROOT, "tax-knowledge");
 const IRS_DIR = join(KNOWLEDGE_DIR, "irs");
 const IRS_NOTICES_DIR = join(IRS_DIR, "notices");
 const WA_DIR = join(KNOWLEDGE_DIR, "wa-dor");
+const CA_DIR = join(KNOWLEDGE_DIR, "ca-ftb");
+const INTERNATIONAL_DIR = join(KNOWLEDGE_DIR, "international");
+const SWEDEN_DIR = join(KNOWLEDGE_DIR, "sweden");
 const LAST_UPDATED_FILE = join(KNOWLEDGE_DIR, ".last-updated");
+const STATUS_FILE = join(KNOWLEDGE_DIR, ".bootstrap-status.json");
 
 const STALENESS_DAYS = 30;
 const FORCE = process.argv.includes("--force");
@@ -184,12 +188,61 @@ const IRS_SOURCES: DownloadSource[] = [
     description: "Schedule SE Instructions",
   },
   {
-    filename: "rev-proc-current-year.txt",
+    filename: "inflation-adjustments-by-tax-year.txt",
     urls: [
-      "https://www.irs.gov/pub/irs-irbs/irb24-44.pdf", // Rev Proc 2024-40 (2025 figures)
+      "https://www.irs.gov/newsroom/inflation-adjusted-tax-items-by-tax-year",
+      "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
       "https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2025",
     ],
-    description: "Revenue Procedure — 2025 Inflation Adjustments",
+    description: "IRS Inflation-Adjusted Tax Items by Tax Year",
+  },
+  {
+    filename: "pub-54-us-citizens-abroad.txt",
+    urls: [
+      "https://www.irs.gov/pub/irs-pdf/p54.pdf",
+      "https://www.irs.gov/forms-pubs/about-publication-54",
+    ],
+    description: "Pub 54 — U.S. Citizens and Resident Aliens Abroad",
+  },
+  {
+    filename: "pub-514-foreign-tax-credit.txt",
+    urls: [
+      "https://www.irs.gov/pub/irs-pdf/p514.pdf",
+      "https://www.irs.gov/publications/p514",
+    ],
+    description: "Pub 514 — Foreign Tax Credit for Individuals",
+  },
+  {
+    filename: "form-1116-instructions.txt",
+    urls: [
+      "https://www.irs.gov/pub/irs-pdf/i1116.pdf",
+      "https://www.irs.gov/instructions/i1116",
+    ],
+    description: "Form 1116 Instructions — Foreign Tax Credit",
+  },
+  {
+    filename: "form-2555-instructions.txt",
+    urls: [
+      "https://www.irs.gov/pub/irs-pdf/i2555.pdf",
+      "https://www.irs.gov/instructions/i2555",
+    ],
+    description: "Form 2555 Instructions — Foreign Earned Income",
+  },
+  {
+    filename: "form-8938-instructions.txt",
+    urls: [
+      "https://www.irs.gov/pub/irs-pdf/i8938.pdf",
+      "https://www.irs.gov/instructions/i8938",
+    ],
+    description: "Form 8938 Instructions — Foreign Financial Assets",
+  },
+  {
+    filename: "form-8621-instructions.txt",
+    urls: [
+      "https://www.irs.gov/pub/irs-pdf/i8621.pdf",
+      "https://www.irs.gov/instructions/i8621",
+    ],
+    description: "Form 8621 Instructions — PFIC Reporting",
   },
 ];
 
@@ -249,6 +302,111 @@ const WA_SOURCES: DownloadSource[] = [
   },
 ];
 
+const INTERNATIONAL_SOURCES: DownloadSource[] = [
+  {
+    filename: "us-sweden-treaty-technical-explanation-1994.txt",
+    urls: ["https://www.irs.gov/pub/irs-trty/sweden-technical-explanation-1994.pdf"],
+    description: "U.S.–Sweden Income Tax Treaty Technical Explanation — 1994",
+  },
+  {
+    filename: "us-sweden-protocol-technical-explanation-2005.txt",
+    urls: ["https://www.irs.gov/pub/irs-trty/swedente06.pdf"],
+    description: "U.S.–Sweden Protocol Technical Explanation — 2005",
+  },
+  {
+    filename: "us-sweden-totalization-agreement.txt",
+    urls: [
+      "https://www.ssa.gov/international/Agreement_Pamphlets/sweden.html",
+      "https://www.ssa.gov/international/Agreement_Texts/sweden.html",
+      "https://secure.ssa.gov/apps10/poms.nsf/lnx/0302001400",
+    ],
+    description: "SSA U.S.–Sweden Totalization Agreement",
+  },
+  {
+    filename: "fbar-requirements.txt",
+    urls: ["https://www.fincen.gov/report-foreign-bank-and-financial-accounts"],
+    description: "FinCEN FBAR Requirements",
+  },
+];
+
+const SWEDEN_SOURCES: DownloadSource[] = [
+  {
+    filename: "declaring-taxes-individuals.txt",
+    urls: [
+      "https://www.skatteverket.se/declaringtaxes",
+      "https://www.skatteverket.se/servicelankar/otherlanguages/englishengelska/individualsandemployees/declaringtaxesforindividuals.4.7be5268414bea064694c5df.html",
+    ],
+    description: "Skatteverket — Declaring Taxes for Individuals",
+  },
+  {
+    filename: "living-and-working-in-sweden.txt",
+    urls: [
+      "https://www.skatteverket.se/servicelankar/otherlanguages/englishengelska/individualsandemployees/movingtosweden.4.7be5268414bea064694c40c.html",
+      "https://www.skatteverket.se/servicelankar/otherlanguages/englishengelska/individualsandemployees.4.7be5268414bea064694c788.html",
+    ],
+    description: "Skatteverket — Individuals Living and Working in Sweden",
+  },
+  {
+    filename: "investment-savings-account-isk.txt",
+    urls: [
+      "https://www.skatteverket.se/privat/skatter/vardepapper/investeringssparkontoisk.4.5fc8c94513259a4ba1d800037851.html",
+    ],
+    description: "Skatteverket — Investment Savings Account (ISK)",
+  },
+];
+
+const CA_SOURCES: DownloadSource[] = [
+  {
+    filename: "ca-income-tax-rates.txt",
+    urls: [
+      "https://www.ftb.ca.gov/file/personal/tax-calculator-tables-rates.asp",
+    ],
+    description: "CA FTB Income Tax Rates",
+  },
+  {
+    filename: "ca-standard-deduction.txt",
+    urls: [
+      "https://www.ftb.ca.gov/file/personal/deductions/index.html",
+    ],
+    description: "CA FTB Standard Deduction and Deductions",
+  },
+  {
+    filename: "ca-estimated-tax.txt",
+    urls: [
+      "https://www.ftb.ca.gov/pay/estimated-tax-payments.html",
+    ],
+    description: "CA FTB Estimated Tax Payments",
+  },
+  {
+    filename: "ca-sdi-rates.txt",
+    urls: [
+      "https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/",
+    ],
+    description: "CA SDI/Payroll Tax Rates",
+  },
+  {
+    filename: "ca-credits.txt",
+    urls: [
+      "https://www.ftb.ca.gov/file/personal/credits/index.html",
+    ],
+    description: "CA FTB Personal Tax Credits",
+  },
+  {
+    filename: "ca-conformity.txt",
+    urls: [
+      "https://www.ftb.ca.gov/tax-pros/law/conformity.html",
+    ],
+    description: "CA FTB Federal-State Conformity Differences",
+  },
+  {
+    filename: "ca-nonresident-part-year.txt",
+    urls: [
+      "https://www.ftb.ca.gov/file/personal/residency-status/index.html",
+    ],
+    description: "CA FTB Nonresident and Part-Year Resident Guide",
+  },
+];
+
 // ─── Helpers ────────────────────────────────────────────────────────────────────
 
 function ensureDir(dir: string): void {
@@ -260,6 +418,7 @@ function ensureDir(dir: string): void {
 function isStale(): boolean {
   if (!existsSync(LAST_UPDATED_FILE)) return true;
   const lastUpdated = new Date(readFileSync(LAST_UPDATED_FILE, "utf-8").trim());
+  if (Number.isNaN(lastUpdated.getTime())) return true;
   const now = new Date();
   const diffDays =
     (now.getTime() - lastUpdated.getTime()) / (1000 * 60 * 60 * 24);
@@ -302,19 +461,18 @@ function htmlToText(html: string): string {
 /**
  * Extract text from a PDF buffer using pdf-parse.
  */
-async function pdfToText(buffer: Buffer): Promise<string> {
+async function pdfToText(buffer: Buffer): Promise<string | null> {
   try {
     // Dynamic import so the script doesn't hard-fail if pdf-parse isn't installed yet
     const pdfParse = (await import("pdf-parse")).default;
     const data = await pdfParse(buffer);
     return data.text;
   } catch (err) {
-    // If pdf-parse isn't available, return a placeholder
     console.warn(
-      "  Warning: pdf-parse not available. Install with: bun install pdf-parse"
+      "  Warning: PDF extraction failed. Run bun install and retry the source."
     );
-    console.warn("  Saving raw PDF metadata instead.");
-    return `[PDF content — install pdf-parse to extract text. Buffer size: ${buffer.length} bytes]`;
+    console.warn(`  ${err instanceof Error ? err.message : String(err)}`);
+    return null;
   }
 }
 
@@ -378,6 +536,30 @@ async function downloadSource(source: DownloadSource): Promise<string | null> {
 
 // ─── Main ───────────────────────────────────────────────────────────────────────
 
+async function downloadGroup(
+  title: string,
+  outputDir: string,
+  sources: DownloadSource[],
+  results: { source: string; status: "ok" | "failed" }[]
+): Promise<void> {
+  console.log(`\n--- ${title} ---\n`);
+  for (const source of sources) {
+    console.log(`Downloading: ${source.description}`);
+    const text = await downloadSource(source);
+    if (text) {
+      const outPath = join(outputDir, source.filename);
+      writeFileSync(outPath, text, "utf-8");
+      console.log(
+        `  Saved: ${source.filename} (${(text.length / 1024).toFixed(1)} KB)\n`
+      );
+      results.push({ source: source.description, status: "ok" });
+    } else {
+      console.warn(`  FAILED: Could not download ${source.description}\n`);
+      results.push({ source: source.description, status: "failed" });
+    }
+  }
+}
+
 async function main(): Promise<void> {
   console.log("=== Tax Knowledge Base Bootstrap ===\n");
 
@@ -393,47 +575,35 @@ async function main(): Promise<void> {
   ensureDir(IRS_DIR);
   ensureDir(IRS_NOTICES_DIR);
   ensureDir(WA_DIR);
+  ensureDir(CA_DIR);
+  ensureDir(INTERNATIONAL_DIR);
+  ensureDir(SWEDEN_DIR);
 
   const results: { source: string; status: "ok" | "failed" }[] = [];
 
-  // Download IRS sources
-  console.log("--- IRS Publications ---\n");
-  for (const source of IRS_SOURCES) {
-    console.log(`Downloading: ${source.description}`);
-    const text = await downloadSource(source);
-    if (text) {
-      const outPath = join(IRS_DIR, source.filename);
-      writeFileSync(outPath, text, "utf-8");
-      console.log(
-        `  Saved: ${source.filename} (${(text.length / 1024).toFixed(1)} KB)\n`
-      );
-      results.push({ source: source.description, status: "ok" });
-    } else {
-      console.warn(`  FAILED: Could not download ${source.description}\n`);
-      results.push({ source: source.description, status: "failed" });
-    }
-  }
+  await downloadGroup("IRS Publications", IRS_DIR, IRS_SOURCES, results);
+  await downloadGroup(
+    "U.S. International Guidance",
+    INTERNATIONAL_DIR,
+    INTERNATIONAL_SOURCES,
+    results
+  );
+  await downloadGroup(
+    "Swedish Tax Agency",
+    SWEDEN_DIR,
+    SWEDEN_SOURCES,
+    results
+  );
+  await downloadGroup("WA Department of Revenue", WA_DIR, WA_SOURCES, results);
+  await downloadGroup("CA Franchise Tax Board", CA_DIR, CA_SOURCES, results);
 
-  // Download WA DOR sources
-  console.log("\n--- WA Department of Revenue ---\n");
-  for (const source of WA_SOURCES) {
-    console.log(`Downloading: ${source.description}`);
-    const text = await downloadSource(source);
-    if (text) {
-      const outPath = join(WA_DIR, source.filename);
-      writeFileSync(outPath, text, "utf-8");
-      console.log(
-        `  Saved: ${source.filename} (${(text.length / 1024).toFixed(1)} KB)\n`
-      );
-      results.push({ source: source.description, status: "ok" });
-    } else {
-      console.warn(`  FAILED: Could not download ${source.description}\n`);
-      results.push({ source: source.description, status: "failed" });
-    }
-  }
-
-  // Write timestamp
-  writeFileSync(LAST_UPDATED_FILE, new Date().toISOString(), "utf-8");
+  const completedAt = new Date().toISOString();
+  writeFileSync(LAST_UPDATED_FILE, completedAt, "utf-8");
+  writeFileSync(
+    STATUS_FILE,
+    JSON.stringify({ completedAt, results }, null, 2),
+    "utf-8"
+  );
 
   // Summary
   console.log("\n=== Summary ===\n");
